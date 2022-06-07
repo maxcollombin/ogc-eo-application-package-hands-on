@@ -1,6 +1,15 @@
 channels:
   - conda-forge
+  - terradue
 dependencies:
   - numpy
   - jupyter-server-proxy
   - code-server >=3.2
+  - cwltool
+  - pystac
+  - gdal
+  - stars
+  - pip
+  - pip:
+    - rio_color
+    - snuggs
