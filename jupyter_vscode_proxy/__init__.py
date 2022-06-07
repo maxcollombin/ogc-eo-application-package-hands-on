@@ -22,7 +22,6 @@ def setup_vscode():
             "none",
             "--disable-telemetry",
             "--port=" + str(port),
-            "/home/jovyan/app-package-1",
         ]
 
         if extensions_dir:
