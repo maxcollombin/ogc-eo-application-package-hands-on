@@ -225,9 +225,10 @@ $graph:
         - entryname: run.sh 
           entry: |- 
             #!/bin/sh
-            /srv/conda/condabin/mamba env create -q -f environment.yaml 
+            /srv/conda/condabin/mamba env create -q -f environment.yaml  || /srv/conda/condabin/mamba env update -f environment.yaml 
             export GDAL_DATA=/srv/conda/envs/env_crop/share/gdal
             export PROJ_LIB=/srv/conda/envs/env_crop/share/proj
+            ls -l "$(inputs.product.dirname)/$(inputs.product.basename)/"
             /srv/conda/envs/env_crop/bin/python crop.py "$(inputs.product.dirname)/$(inputs.product.basename)" "$(inputs.band)" "$(inputs.epsg)" "$(inputs.bbox)"
             rm -fr run.sh environment.yaml crop.py .cache
         - entryname: crop.py
@@ -288,9 +289,9 @@ $graph:
                         gdal.SetConfigOption(var, os.getenv(var))
                     return "/vsis3/{}".format(uri.replace("s3://", ""))
                 else:
-                    return uri
+                    return uri 
 
-            href=fix_asset_href(asset.href)
+            href=fix_asset_href(asset.get_absolute_href())
             ds = gdal.Open(href)
 
             gdal.Translate(f"crop_{common_name}.tif", ds, projWin=[bbox[0], bbox[3], bbox[2], bbox[1]], projWinSRS=epsg) 
@@ -327,8 +328,6 @@ $graph:
   id: composite-cl
 
   requirements:
-    DockerRequirement: 
-      dockerPull: docker.io/mambaorg/micromamba
     InlineJavascriptRequirement: {}
     InitialWorkDirRequirement:
       listing:
@@ -348,8 +347,8 @@ $graph:
         - entryname: run.sh 
           entry: |- 
             #!/bin/sh
-            micromamba create -q -f environment.yaml 
-            /opt/conda/envs/env_composite/bin/python composite.py
+            /srv/conda/condabin/mamba create -q -f environment.yaml || /srv/conda/condabin/mamba env update -f environment.yaml 
+            /srv/conda/envs/env_composite/bin/python composite.py
             rm -fr run.sh environment.yaml composite.py .cache
         - entryname: composite.py
           entry: |-
@@ -424,8 +423,7 @@ $graph:
   id: stac-cl
 
   requirements:
-    DockerRequirement: 
-      dockerPull: docker.io/mambaorg/micromamba
+
     InlineJavascriptRequirement: {}
     InitialWorkDirRequirement:
       listing:
@@ -442,8 +440,8 @@ $graph:
         - entryname: run.sh 
           entry: |- 
             #!/bin/sh
-            micromamba create -q -f environment.yaml 
-            /opt/conda/envs/env_rio_stac/bin/python stac.py "$(inputs.product.dirname)/$(inputs.product.basename)"
+            /srv/conda/condabin/mamba create -q -f environment.yaml || /srv/conda/condabin/mamba env update -f environment.yaml 
+            /srv/conda/envs/env_rio_stac/bin/python stac.py "$(inputs.product.dirname)/$(inputs.product.basename)"
             rm -fr run.sh environment.yaml stac.py .cache
         - entryname: stac.py
           entry: |-
