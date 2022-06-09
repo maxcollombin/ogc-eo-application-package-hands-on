@@ -9,3 +9,5 @@ code-server --install-extension ms-python.python
 
 # Install the VS code proxy
 pip install -e.
+
+mamba create -n env_test pystac

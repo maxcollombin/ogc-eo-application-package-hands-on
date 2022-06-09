@@ -9,6 +9,7 @@ dependencies:
   - pystac
   - gdal
   - stars
+  - mamba 
   - pip
   - pip:
     - rio_color
