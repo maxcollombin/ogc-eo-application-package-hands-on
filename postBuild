@@ -6,8 +6,8 @@ jupyter labextension install @jupyterlab/server-proxy
 jupyter lab build
 
 code-server --install-extension ms-python.python 
-code-server --install-extension redhat.vscode-yaml-1.8.0
+code-server --install-extension redhat.vscode-yaml
 # Install the VS code proxy
 pip install -e.
 
-mamba create -n env_test pystac -c conda-forge
+mamba create -n env_test pystac otb -c conda-forge -c terradue

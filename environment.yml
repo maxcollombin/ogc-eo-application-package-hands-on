@@ -11,6 +11,8 @@ dependencies:
   - stars
   - mamba 
   - pip
+  - yq
+  - jq
   - pip:
     - rio_color
     - snuggs
