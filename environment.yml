@@ -13,6 +13,7 @@ dependencies:
   - pip
   - yq
   - jq
+  - awscli
   - pip:
     - rio_color
     - snuggs
