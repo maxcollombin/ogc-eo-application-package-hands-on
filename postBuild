@@ -10,6 +10,6 @@ code-server --install-extension redhat.vscode-yaml
 # Install the VS code proxy
 pip install -e.
 
-mamba create -n env_otb otb -c conda-forge -c terradue
-mamba create -n env_gdal gdal -c conda-forge -c terradue
-mamba create -n env_snap snap -c conda-forge -c terradue
+# mamba create -n env_otb otb -c conda-forge -c terradue
+# mamba create -n env_gdal gdal -c conda-forge -c terradue
+# mamba create -n env_snap snap -c conda-forge -c terradue
