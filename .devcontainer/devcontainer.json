@@ -1,0 +1,15 @@
+{
+	"name": "coder",
+		
+	"build": {
+		"context": "..",
+		"dockerfile": "./Dockerfile"},
+	"settings": { 
+		"python.pythonPath": "/opt/conda/envs/env_app/bin/python"},
+	"extensions": [
+		"ms-python.python"
+	],
+	"forwardPorts": [8501],
+	"containerEnv": {
+	},
+}
