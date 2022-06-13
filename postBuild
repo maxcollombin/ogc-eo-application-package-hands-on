@@ -12,4 +12,4 @@ pip install -e.
 
 mamba create -n env_otb otb -c conda-forge -c terradue
 mamba create -n env_gdal gdal -c conda-forge -c terradue
-mamba create -n env_snap snap -c conda-forge -c terradue
+# create -n env_snap snap -c conda-forge -c terradue
