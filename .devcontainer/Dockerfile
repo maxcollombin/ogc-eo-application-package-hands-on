@@ -10,7 +10,7 @@ RUN apt-get update -y \
  && apt-get upgrade -y \
  && apt-get install -y --no-install-recommends \
         ca-certificates \
-        curl sudo git gcc build-essential
+        curl sudo git gcc build-essential tree nodejs
 
 RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
@@ -21,8 +21,10 @@ USER mambauser
 
 #ADD .devcontainer/environment.yml /tmp/environment.yml
 
-RUN micromamba create -n env_another gdal -c conda-forge -c terradue
+RUN micromamba create -n env_crop -c conda-forge gdal click gdal pystac  
+RUN micromamba create -n env_norm_diff -c conda-forge click gdal  
+RUN micromamba create -n env_otsu gdal -c conda-forge scikit-image click gdal 
 
-RUN micromamba create -n env_app gdal -c conda-forge -c terradue
+RUN micromamba create -n env_base -c conda-forge -c terradue Stars black awscli
 
 WORKDIR /home/mambauser
