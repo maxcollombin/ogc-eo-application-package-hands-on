@@ -9,3 +9,8 @@ Run with:
 ```console
 cwltool app-package.cwl#s2-composites params.yml 
 ```
+
+```console
+cd water-bodies
+cwltool app-package.cwl#water_bodies params.yml 
+```
