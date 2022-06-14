@@ -11,3 +11,7 @@
 .profile
 __pycache__
 *.tif
+*.gml
+*.TIF
+*.jp2
+*.png
