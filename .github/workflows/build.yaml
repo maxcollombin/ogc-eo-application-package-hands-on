@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install cwltool
-      - run: cwltool --validate app-package.cwl
+      - run: cwltool --validate water-bodies/app-package.cwl
 
   version:
     needs: validate
@@ -31,7 +31,7 @@ jobs:
           VERSION: v4.2.0
           BINARY: yq_linux_amd64
       - run: chmod +x /usr/bin/yq
-      - run: echo "APP_VERSION=$( yq e '."s:softwareVersion"' app-package.cwl | tr -d "\n" )" >> $GITHUB_ENV
+      - run: echo "APP_VERSION=$( yq e '."s:softwareVersion"' water-bodies/app-package.cwl | tr -d "\n" )" >> $GITHUB_ENV
       - run: echo app version is $APP_VERSION
       - id: set-version
         run: echo "::set-output name=version::$APP_VERSION"
@@ -118,12 +118,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: yq -i eval '(.$graph[] | select (.id == "crop") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/crop:${{needs.version.outputs.app-version}}"' app-package.cwl 
-      - run: yq -i eval '(.$graph[] | select (.id == "norm_diff") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/norm_fiff:${{needs.version.outputs.app-version}}"' app-package.cwl 
-      - run: yq -i eval '(.$graph[] | select (.id == "otsu") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/otsu:${{needs.version.outputs.app-version}}"' app-package.cwl 
-      - run: yq -i eval '(.$graph[] | select (.id == "stac") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/stac:${{needs.version.outputs.app-version}}"' app-package.cwl    
+      - run: yq -i eval '(.$graph[] | select (.id == "crop") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/crop:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
+      - run: yq -i eval '(.$graph[] | select (.id == "norm_diff") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/norm_fiff:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
+      - run: yq -i eval '(.$graph[] | select (.id == "otsu") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/otsu:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
+      - run: yq -i eval '(.$graph[] | select (.id == "stac") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/Terradue/ogc-eo-application-package-hands-on/stac:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl    
       - run: mkdir downloads
-      - run: cp app-package.cwl downloads/app-water-bodies.${{needs.version.outputs.app-version}}.cwl
+      - run: cp water-bodies/app-package.cwl downloads/app-water-bodies.${{needs.version.outputs.app-version}}.cwl
       - run: ls downloads/app-water-bodies.${{needs.version.outputs.app-version}}.cwl
       - uses: actions/upload-artifact@v2
         with: 
