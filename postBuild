@@ -10,6 +10,10 @@ code-server --install-extension redhat.vscode-yaml
 # Install the VS code proxy
 pip install -e.
 
-mamba create -n env_crop -c conda-forge gdal click gdal pystac  
+mamba create -n env_crop -c conda-forge gdal click pystac  
 mamba create -n env_norm_diff -c conda-forge click gdal  
 mamba create -n env_otsu gdal -c conda-forge scikit-image click gdal 
+mamba create -n env_stac -c conda-forge click pystac python=3.9 pip && \
+    /opt/conda/envs/env_stac/bin/pip install rio_stac
+
+mamba install -n base cwltool nodejs
