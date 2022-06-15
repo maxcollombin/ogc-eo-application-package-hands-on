@@ -27,6 +27,7 @@ RUN micromamba create -r /srv/conda -n env_otsu gdal -c conda-forge scikit-image
 RUN micromamba create -r /srv/conda -n env_stac -c conda-forge click pystac python=3.9 pip && \
     /srv/conda/envs/env_stac/bin/pip install rio_stac
 
-RUN micromamba create -r /srv/conda -n env_base -c conda-forge -c terradue Stars black awscli cwltool mkdocs-material
+RUN micromamba create -r /srv/conda -n env_base -c conda-forge -c terradue Stars black awscli cwltool mkdocs-material && \
+    /srv/conda/envs/env_base/bin/pip install mkdocs-mermaid2-plugin
 
 WORKDIR /home/mambauser
