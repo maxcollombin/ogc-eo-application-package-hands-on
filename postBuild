@@ -3,6 +3,7 @@
 # Enable the proxy extension in notebook and lab
 jupyter serverextension enable --py jupyter_server_proxy
 jupyter labextension install @jupyterlab/server-proxy
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter lab build
 
 code-server --install-extension ms-python.python 
@@ -16,4 +17,4 @@ mamba create -c conda-forge -p /srv/conda/envs/env_otsu gdal scikit-image click 
 mamba create -c conda-forge -p /srv/conda/envs/env_stac click pystac python=3.9 pip && \
     /srv/conda/envs/env_stac/bin/pip install rio_stac
 
-mamba install -n base cwltool nodejs
+mamba install -n base cwltool nodejs ipyleaflet localtileserver

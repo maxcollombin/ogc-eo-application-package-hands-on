@@ -141,9 +141,9 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /opt/conda/envs/env_crop/bin:/srv/conda/envs/env_crop/bin
+        PATH: /srv/conda/envs/env_crop/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/command-line-tools/crop
-        PROJ_LIB: /opt/conda/envs/env_crop/share/proj/:/srv/conda/envs/env_crop/share/proj/
+        PROJ_LIB: /srv/conda/envs/env_crop/share/proj/
 
   baseCommand: ["python", "-m", "app"]
   arguments: []
@@ -177,9 +177,9 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /opt/conda/envs/env_norm_diff/bin:/srv/conda/envs/env_norm_diff/bin
+        PATH: /srv/conda/envs/env_norm_diff/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/norm_diff:/home/jovyan/command-line-tools/norm_diff
-        PROJ_LIB: /opt/conda/envs/env_norm_diff/share/proj/:/srv/conda/envs/env_norm_diff/share/proj/
+        PROJ_LIB: /srv/conda/envs/env_norm_diff/share/proj/
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:
@@ -200,9 +200,9 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /opt/conda/envs/env_otsu/bin:/srv/conda/envs/env_otsu/bin
+        PATH: /srv/conda/envs/env_otsu/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/command-line-tools/otsu
-        PROJ_LIB: /opt/conda/envs/env_otsu/share/proj/:/srv/conda/envs/env_otsu/share/proj/
+        PROJ_LIB: /srv/conda/envs/env_otsu/share/proj/
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:
@@ -223,9 +223,9 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /opt/conda/envs/env_stac/bin:/opt/conda/envs/env_stac/bin
+        PATH: /srv/conda/envs/env_stac/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/stac:/home/jovyan/command-line-tools/stac
-        PROJ_LIB: /opt/conda/envs/env_stac/lib/python3.9/site-packages/rasterio/proj_data:/srv/conda/envs/env_stac/lib/python3.9/site-packages/rasterio/proj_data
+        PROJ_LIB: /srv/conda/envs/env_stac/lib/python3.9/site-packages/rasterio/proj_data
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:

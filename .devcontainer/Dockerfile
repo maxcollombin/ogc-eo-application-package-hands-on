@@ -21,10 +21,10 @@ USER mambauser
 
 #ADD .devcontainer/environment.yml /tmp/environment.yml
 
-RUN micromamba create -n env_crop -c conda-forge gdal click pystac  
-RUN micromamba create -n env_norm_diff -c conda-forge click gdal  
-RUN micromamba create -n env_otsu gdal -c conda-forge scikit-image click gdal 
-RUN micromamba create -n env_stac -c conda-forge click pystac python=3.9 pip && \
+RUN micromamba create -r /srv/conda -n env_crop -c conda-forge gdal click pystac  
+RUN micromamba create -r /srv/conda -n env_norm_diff -c conda-forge click gdal  
+RUN micromamba create -r /srv/conda -n env_otsu gdal -c conda-forge scikit-image click gdal 
+RUN micromamba create -r /srv/conda -n env_stac -c conda-forge click pystac python=3.9 pip && \
     /opt/conda/envs/env_stac/bin/pip install rio_stac
 
 
