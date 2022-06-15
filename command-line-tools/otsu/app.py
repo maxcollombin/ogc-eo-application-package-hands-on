@@ -13,10 +13,10 @@ def threshold(data):
     short_help="Otsu threshoold",
     help="Applies the Otsu threshold",
 )
-@click.argument("tif", nargs=1)
-def app(tif):
+@click.argument("raster", nargs=1)
+def otsu(raster):
 
-    ds = gdal.Open(tif)
+    ds = gdal.Open(raster)
 
     driver = gdal.GetDriverByName("GTiff")
 
@@ -42,4 +42,4 @@ def app(tif):
 
 
 if __name__ == "__main__":
-    app()
+    otsu()

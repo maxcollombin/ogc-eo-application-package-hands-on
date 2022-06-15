@@ -1,5 +1,4 @@
 import click
-import os
 from urllib.parse import urlparse
 from osgeo import gdal
 import pystac
@@ -58,10 +57,6 @@ def vsi_href(uri):
 @click.command(
     short_help="Crop",
     help="Crops a STAC Item asset defined with its common band name",
-    context_settings=dict(
-        ignore_unknown_options=True,
-        allow_extra_args=True,
-    ),
 )
 @click.option(
     "--input-item",
@@ -87,8 +82,7 @@ def vsi_href(uri):
     help="Common band name",
     required=True,
 )
-@click.pass_context
-def app(ctx, item_url, aoi, band, epsg):
+def crop(item_url, aoi, band, epsg):
 
     item = pystac.read_file(item_url)
 
@@ -112,4 +106,4 @@ def app(ctx, item_url, aoi, band, epsg):
 
 
 if __name__ == "__main__":
-    app()
+    crop()

@@ -1,5 +1,4 @@
 import click
-import os
 from osgeo import gdal
 import numpy as np
 
@@ -7,22 +6,15 @@ import numpy as np
 @click.command(
     short_help="Normalized difference",
     help="Performs a normalized difference",
-    context_settings=dict(
-        ignore_unknown_options=True,
-        allow_extra_args=True,
-    ),
 )
-@click.argument("tifs", nargs=2)
-@click.pass_context
-def app(ctx, tifs):
+@click.argument("rasters", nargs=2)
+def normalized_difference(rasters):
 
     # Allow division by zero
     np.seterr(divide="ignore", invalid="ignore")
 
-    print(tifs)
-
-    ds1 = gdal.Open(tifs[0])
-    ds2 = gdal.Open(tifs[1])
+    ds1 = gdal.Open(rasters[0])
+    ds2 = gdal.Open(rasters[1])
 
     driver = gdal.GetDriverByName("GTiff")
 
@@ -45,6 +37,9 @@ def app(ctx, tifs):
 
     dst_ds.GetRasterBand(1).WriteArray(norm_diff)
 
+    dst_ds = None
+    ds1 = ds2 = None
+
 
 if __name__ == "__main__":
-    app()
+    normalized_difference()

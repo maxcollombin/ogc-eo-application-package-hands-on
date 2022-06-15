@@ -26,10 +26,10 @@ $graph:
       type: string[]
 
   outputs:
-  - id: detected_water_bodies
+  - id: stac_catalog
     outputSource:
-    - node_water_bodies/detected_water_body
-    type: Directory[]
+    - node_stac/stac_catalog
+    type: Directory
 
   steps:
 
@@ -47,6 +47,18 @@ $graph:
         
       scatter: item
       scatterMethod: dotproduct
+    
+    node_stac:
+
+      run: "#stac"
+
+      in: 
+        item: stac_items
+        rasters:
+          source: node_water_bodies/detected_water_body
+        
+      out:
+      - stac_catalog
 
 - class: Workflow
  
@@ -80,7 +92,7 @@ $graph:
     - id: detected_water_body
       outputSource: 
       - node_otsu/binary_mask_item
-      type: Directory
+      type: File
 
   steps:
 
@@ -106,7 +118,7 @@ $graph:
       run: "#norm_diff"
 
       in: 
-        tifs: 
+        rasters: 
           source: node_crop/cropped
         
       out:
@@ -129,9 +141,9 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /opt/conda/envs/env_app/bin
-        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop/crop
-        PROJ_LIB: /opt/conda/envs/env_app/share/proj/
+        PATH: /opt/conda/envs/env_crop/bin
+        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop
+        PROJ_LIB: /opt/conda/envs/env_crop/share/proj/
 
   baseCommand: ["python", "-m", "app"]
   arguments: []
@@ -165,14 +177,16 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /opt/conda/envs/env_app/bin
+        PATH: /opt/conda/envs/env_norm_diff/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/norm_diff
-        PROJ_LIB: /opt/conda/envs/env_app/share/proj/
+        PROJ_LIB: /opt/conda/envs/env_norm_diff/share/proj/
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:
-    tifs:
+    rasters:
       type: File[]
+      inputBinding:
+        position: 1
   outputs: 
     ndwi:
       outputBinding:
@@ -186,16 +200,51 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /opt/conda/envs/env_app/bin
+        PATH: /opt/conda/envs/env_otsu/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/otsu
-        PROJ_LIB: /opt/conda/envs/env_app/share/proj/
+        PROJ_LIB: /opt/conda/envs/env_otsu/share/proj/
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:
     raster:
       type: File
+      inputBinding:
+        position: 1
   outputs: 
     binary_mask_item:
+      outputBinding:
+        glob: '*.tif'
+      type: File
+
+- class: CommandLineTool
+  id: stac
+
+  requirements:
+    InlineJavascriptRequirement: {}
+    EnvVarRequirement:
+      envDef: 
+        PATH: /opt/conda/envs/env_stac/bin
+        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/stac
+        PROJ_LIB: /opt/conda/envs/env_stac/lib/python3.9/site-packages/rasterio/proj_data
+  baseCommand: ["python", "-m", "app"]
+  arguments: []
+  inputs:
+    item:
+      type:
+        type: array
+        items: string
+        inputBinding:
+          prefix: --input-item
+          
+    rasters:
+      type:
+        type: array
+        items: File
+        inputBinding:
+          prefix: --water-body
+    
+  outputs: 
+    stac_catalog:
       outputBinding:
         glob: .
       type: Directory
