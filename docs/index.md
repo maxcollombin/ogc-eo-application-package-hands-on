@@ -22,8 +22,8 @@ Run the water bodies detection Application Package using [Code server IDE interf
 
 Open a Terminal and type:
 
-```console
-cwltool --no-container app-package.cwl#water_bodies params.yml
+```
+cwltool --no-container app-package.cwl#water_bodies params.yml > out.json
 ```
 
 **Note** The flag `--no-container` is used to instruct the CWL runner to use the local command-line tools instead of using the containers as Binder cannot launch containers.
@@ -32,6 +32,4 @@ Inspect the Python command-line tools used by each step of the computational wor
 
 Once completed, visualize the results with a visualization notebook on [JupyterLab](../../lab) 
 
-
-[JupyterLab](../../lab/tree/visualization.ipynb) 
 
