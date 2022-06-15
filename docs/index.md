@@ -1,6 +1,3 @@
-## EO Application Packages - hands-on
-
-### About 
 
 The [OGC Best Practice for Earth Observation Application Package](https://docs.ogc.org/bp/20-089r1.html) describes how to package EO computational workflows targeting their execution automation, scalability, reusability and portability while also being workflow-engine and vendor neutral.
 
@@ -14,22 +11,13 @@ An Application Package is a text document that describes the input and output in
 
 The Application Package guarantees the automation, scalability, reusability, portability of the Application while also being workflow-engine and vendor neutral.
 
-### Water bodies detection Application Package
+### Bring your own algorithm
 
-This Application Package takes as input Copernicus Sentinel-2 data and detects water bodies by applying the Otsu thresholding technique on the Normalized Difference Water Index.
+The application (e.g. Python, shell script, C++) is containerized and registered in Container Registry 
 
-Run the water bodies detection Application Package using [Code server IDE interface](../../vscode/?folder=/home/jovyan/water-bodies)
+The input and output interface of the application and the orchestration of its command-line tools are described with Common Workflow Language (CWL)
 
-Open a Terminal and type:
+The Platform converts the OGC API Processes in a CWL execution request in the computing resources of the selected provider
 
-```
-cwltool --no-container app-package.cwl#water_bodies params.yml > out.json
-```
-
-**Note** The flag `--no-container` is used to instruct the CWL runner to use the local command-line tools instead of using the containers as Binder cannot launch containers.
-
-Inspect the Python command-line tools used by each step of the computational workflow.
-
-Once completed, visualize the results with a visualization notebook on [JupyterLab](../../lab) 
-
+The Application can be deployed in multiple Clouds without lock-in 
 

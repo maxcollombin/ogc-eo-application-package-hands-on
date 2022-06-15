@@ -7,7 +7,8 @@ theme:
        primary: white
        accent: teal
 nav:
-    - Welcome: index.md
+    - EO Application Packages - hands-on: index.md
+    - Water bodies detection: water-bodies.md
     
     
 plugins:

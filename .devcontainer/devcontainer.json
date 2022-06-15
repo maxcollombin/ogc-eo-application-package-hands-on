@@ -9,7 +9,7 @@
 	"extensions": [
 		"ms-python.python"
 	],
-	"forwardPorts": [8501],
+	"forwardPorts": [8888],
 	"containerEnv": {
 	},
 }
