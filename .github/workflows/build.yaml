@@ -118,10 +118,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: yq -i eval '(.$graph[] | select (.id == "crop") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/crop:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
-      - run: yq -i eval '(.$graph[] | select (.id == "norm_diff") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/norm_fiff:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
-      - run: yq -i eval '(.$graph[] | select (.id == "otsu") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/otsu:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
-      - run: yq -i eval '(.$graph[] | select (.id == "stac") ).requirements.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/stac:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl    
+      - run: yq -i eval '(.$graph[] | select (.id == "crop") ).hints.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/crop:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
+      - run: yq -i eval '(.$graph[] | select (.id == "norm_diff") ).hints.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/norm_fiff:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
+      - run: yq -i eval '(.$graph[] | select (.id == "otsu") ).hints.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/otsu:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
+      - run: yq -i eval '(.$graph[] | select (.id == "stac") ).hints.DockerRequirement.dockerPull = "docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/stac:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl    
       - run: mkdir downloads
       - run: cp water-bodies/app-package.cwl downloads/app-water-bodies.${{needs.version.outputs.app-version}}.cwl
       - run: ls downloads/app-water-bodies.${{needs.version.outputs.app-version}}.cwl
