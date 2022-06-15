@@ -14,6 +14,5 @@ __pycache__
 *.gml
 *.TIF
 *.jp2
-*.png
 data-access
 ls8-data
