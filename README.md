@@ -1,21 +1,9 @@
-# VS Code on Binder
+# EO Application Packages - hands-on
 
-## Application package 1
+The [OGC Best Practice for Earth Observation Application Package](https://docs.ogc.org/bp/20-089r1.html) describes how to package EO computational workflows targeting their execution automation, scalability, reusability and portability while also being workflow-engine and vendor neutral.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fabricebrito/vscode-binder/master?urlpath=vscode%2F%3Ffolder=/home/jovyan/app-package-1)
+This hands-on training targets EO application developers and provides an introduction to the Earth Observation Application Package concept and a set of real-life examples running on an Integrated Development Environment on Binder.
 
-Run with:
-
-```console
-cwltool app-package.cwl#s2-composites params.yml 
-```
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fabricebrito/vscode-binder/master?urlpath=vscode%2F%3Ffolder=/home/jovyan/water-bodies)
-
-
-```console
-cwltool app-package.cwl#water_bodies params.yml 
-```
-
+## Launch the hands-on environment on Binder
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fabricebrito/vscode-binder/master?urlpath=/proxy/8001/)

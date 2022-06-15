@@ -2,7 +2,7 @@
 
 ### About 
 
-The (OGC Best Practice for Earth Observation Application Package) describes how to package EO computational workflows targeting their execution automation, scalability, reusability and portability while also being workflow-engine and vendor neutral.
+The [OGC Best Practice for Earth Observation Application Package](https://docs.ogc.org/bp/20-089r1.html) describes how to package EO computational workflows targeting their execution automation, scalability, reusability and portability while also being workflow-engine and vendor neutral.
 
 This hands-on training targets EO application developers and provides an introduction to the Earth Observation Application Package concept and a set of real-life exercises running on an Integrated Development Environment running on Binder.
 
@@ -25,6 +25,8 @@ Open a Terminal and type:
 ```console
 cwltool --no-container app-package.cwl#water_bodies params.yml
 ```
+
+**Note** The flag `--no-container` is used to instruct the CWL runner to use the local command-line tools instead of using the containers as Binder cannot launch containers.
 
 Once completed, visualize the results with a visualization notebook on [JupyterLab](../../lab) 
 
