@@ -48,7 +48,7 @@ jobs:
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
       - name: build & push crop image
         run: |
-          IMAGE_ID=docker.pkg.github.com/terradue/crop
+          IMAGE_ID=docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/crop
           docker build water-bodies/command-line-tools/crop --file water-bodies/command-line-tools/crop/Dockerfile --tag crop
           docker tag crop $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
