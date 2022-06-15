@@ -1,4 +1,4 @@
-site_name: 'OGC TC123 - Geospatial Cloud Native Process'
+site_name: 'EO Application Packages - hands-on'
 theme:
     name: 'material'
     logo: imgs/TERRADUE_Icon_3.png
