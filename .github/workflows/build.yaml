@@ -26,11 +26,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq 
-        env:
-          VERSION: v4.2.0
-          BINARY: yq_linux_amd64
-      - run: chmod +x /usr/bin/yq
+      - run: pip install yq
       - run: echo "APP_VERSION=$( yq e '."s:softwareVersion"' water-bodies/app-package.cwl | tr -d "\n" )" >> $GITHUB_ENV
       - run: echo app version is $APP_VERSION
       - id: set-version
