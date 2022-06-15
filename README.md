@@ -7,3 +7,5 @@ This hands-on training targets EO application developers and provides an introdu
 ## Launch the hands-on environment on Binder
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fabricebrito/vscode-binder/master?urlpath=/proxy/8001/)
+
+This hands-on is developed to support the OGC's [Developer Workshop at the 123 Member Meeting](https://github.com/opengeospatial/developer-events/wiki/Developer-Workshop-at-the-123-Member-Meeting)
