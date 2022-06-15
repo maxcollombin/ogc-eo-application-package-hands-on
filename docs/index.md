@@ -28,6 +28,8 @@ cwltool --no-container app-package.cwl#water_bodies params.yml
 
 **Note** The flag `--no-container` is used to instruct the CWL runner to use the local command-line tools instead of using the containers as Binder cannot launch containers.
 
+Inspect the Python command-line tools used by each step of the computational workflow.
+
 Once completed, visualize the results with a visualization notebook on [JupyterLab](../../lab) 
 
 
