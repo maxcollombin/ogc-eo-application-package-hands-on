@@ -10,7 +10,9 @@ Run with:
 cwltool app-package.cwl#s2-composites params.yml 
 ```
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fabricebrito/vscode-binder/master?urlpath=vscode%2F%3Ffolder=/home/jovyan/water-bodies)
+
+
 ```console
-cd water-bodies
 cwltool app-package.cwl#water_bodies params.yml 
 ```
