@@ -1,7 +1,0 @@
-red: red
-green: green
-blue: blue
-bbox: "-8.811,38.497,-8.679,38.72"
-proj: "EPSG:4326"
-products:
-- 'https://catalog.terradue.com/sentinel2/search?uid=S2B_MSIL1C_20220603T112119_N0400_R037_T29SNC_20220603T120732&do=[terradue]'
