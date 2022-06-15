@@ -46,7 +46,7 @@ def to_stac(item_urls, water_bodies):
             with_raster=False,
         )
 
-    cat.add_items([out_item])
+        cat.add_items([out_item])
 
     cat.normalize_and_save(
         root_href="./", catalog_type=pystac.CatalogType.SELF_CONTAINED
