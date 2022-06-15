@@ -142,7 +142,7 @@ $graph:
     EnvVarRequirement:
       envDef: 
         PATH: /srv/conda/envs/env_crop/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/command-line-tools/crop
+        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/water-bodies/command-line-tools/crop
         PROJ_LIB: /srv/conda/envs/env_crop/share/proj/
 
   hints:
@@ -182,7 +182,7 @@ $graph:
     EnvVarRequirement:
       envDef: 
         PATH: /srv/conda/envs/env_norm_diff/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/norm_diff:/home/jovyan/command-line-tools/norm_diff
+        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/norm_diff:/home/jovyan/water-bodies/command-line-tools/norm_diff
         PROJ_LIB: /srv/conda/envs/env_norm_diff/share/proj/
 
   hints:
@@ -210,7 +210,7 @@ $graph:
     EnvVarRequirement:
       envDef: 
         PATH: /srv/conda/envs/env_otsu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/command-line-tools/otsu
+        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/water-bodies/command-line-tools/otsu
         PROJ_LIB: /srv/conda/envs/env_otsu/share/proj/
   
   hints:
@@ -238,7 +238,7 @@ $graph:
     EnvVarRequirement:
       envDef: 
         PATH: /srv/conda/envs/env_stac/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/stac:/home/jovyan/command-line-tools/stac
+        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/stac:/home/jovyan/water-bodies/command-line-tools/stac
         PROJ_LIB: /srv/conda/envs/env_stac/lib/python3.9/site-packages/rasterio/proj_data
 
   hints:
