@@ -65,7 +65,7 @@ jobs:
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
       - name: build & push norm_diff image
         run: |
-          IMAGE_ID=docker.pkg.github.com/terradue/norm_diff
+          IMAGE_ID=docker.pkg.github.com/terradue//ogc-eo-application-package-hands-on/norm_diff
           docker build water-bodies/command-line-tools/norm_diff --file water-bodies/command-line-tools/norm_diff/Dockerfile --tag norm_diff
           docker tag norm_diff $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
@@ -82,7 +82,7 @@ jobs:
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
       - name: build & push otsu image
         run: |
-          IMAGE_ID=docker.pkg.github.com/terradue/otsu
+          IMAGE_ID=docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/otsu
           docker build water-bodies/command-line-tools/otsu --file water-bodies/command-line-tools/otsu/Dockerfile --tag otsu
           docker tag otsu $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
@@ -99,7 +99,7 @@ jobs:
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
       - name: build & push stac image
         run: |
-          IMAGE_ID=docker.pkg.github.com/terradue/stac
+          IMAGE_ID=docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/stac
           docker build water-bodies/command-line-tools/stac --file water-bodies/command-line-tools/stac/Dockerfile --tag stac
           docker tag stac $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
