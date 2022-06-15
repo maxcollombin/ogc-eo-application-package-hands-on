@@ -21,10 +21,13 @@ USER mambauser
 
 #ADD .devcontainer/environment.yml /tmp/environment.yml
 
-RUN micromamba create -n env_crop -c conda-forge gdal click gdal pystac  
+RUN micromamba create -n env_crop -c conda-forge gdal click pystac  
 RUN micromamba create -n env_norm_diff -c conda-forge click gdal  
 RUN micromamba create -n env_otsu gdal -c conda-forge scikit-image click gdal 
+RUN micromamba create -n env_stac -c conda-forge click pystac python=3.9 pip && \
+    /opt/conda/envs/env_stac/bin/pip install rio_stac
 
-RUN micromamba create -n env_base -c conda-forge -c terradue Stars black awscli
+
+RUN micromamba create -n env_base -c conda-forge -c terradue Stars black awscli cwltool
 
 WORKDIR /home/mambauser
