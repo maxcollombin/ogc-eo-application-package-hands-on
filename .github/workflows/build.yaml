@@ -45,7 +45,7 @@ jobs:
       - name: build & push crop image
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/crop
-          docker build src --file water-bodies/command-line-tools/crop/Dockerfile --tag crop
+          docker build water-bodies/command-line-tools/crop --file water-bodies/command-line-tools/crop/Dockerfile --tag crop
           docker tag crop $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
 
@@ -62,7 +62,7 @@ jobs:
       - name: build & push norm_diff image
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/norm_diff
-          docker build src --file water-bodies/command-line-tools/norm_diff/Dockerfile --tag norm_diff
+          docker build water-bodies/command-line-tools/norm_diff --file water-bodies/command-line-tools/norm_diff/Dockerfile --tag norm_diff
           docker tag norm_diff $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
   
@@ -79,7 +79,7 @@ jobs:
       - name: build & push otsu image
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/otsu
-          docker build src --file water-bodies/command-line-tools/otsu/Dockerfile --tag otsu
+          docker build water-bodies/command-line-tools/otsu --file water-bodies/command-line-tools/otsu/Dockerfile --tag otsu
           docker tag otsu $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
 
@@ -96,7 +96,7 @@ jobs:
       - name: build & push stac image
         run: |
           IMAGE_ID=docker.pkg.github.com/${{ github.repository }}/stac
-          docker build src --file water-bodies/command-line-tools/stac/Dockerfile --tag stac
+          docker build water-bodies/command-line-tools/stac --file water-bodies/command-line-tools/stac/Dockerfile --tag stac
           docker tag stac $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
 
