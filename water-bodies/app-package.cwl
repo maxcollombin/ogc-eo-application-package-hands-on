@@ -141,9 +141,13 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /srv/conda/envs/env_crop/bin
+        PATH: /srv/conda/envs/env_crop/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/command-line-tools/crop
         PROJ_LIB: /srv/conda/envs/env_crop/share/proj/
+
+  hints:
+    DockerRequirement:
+      dockerPull: crop
 
   baseCommand: ["python", "-m", "app"]
   arguments: []
@@ -177,9 +181,14 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /srv/conda/envs/env_norm_diff/bin
+        PATH: /srv/conda/envs/env_norm_diff/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/norm_diff:/home/jovyan/command-line-tools/norm_diff
         PROJ_LIB: /srv/conda/envs/env_norm_diff/share/proj/
+
+  hints:
+    DockerRequirement:
+      dockerPull: norm_diff
+
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:
@@ -200,9 +209,14 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /srv/conda/envs/env_otsu/bin
+        PATH: /srv/conda/envs/env_otsu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/command-line-tools/otsu
         PROJ_LIB: /srv/conda/envs/env_otsu/share/proj/
+  
+  hints:
+    DockerRequirement:
+      dockerPull: otsu
+  
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:
@@ -223,9 +237,14 @@ $graph:
     InlineJavascriptRequirement: {}
     EnvVarRequirement:
       envDef: 
-        PATH: /srv/conda/envs/env_stac/bin
+        PATH: /srv/conda/envs/env_stac/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/stac:/home/jovyan/command-line-tools/stac
         PROJ_LIB: /srv/conda/envs/env_stac/lib/python3.9/site-packages/rasterio/proj_data
+
+  hints:
+    DockerRequirement:
+      dockerPull: stac
+
   baseCommand: ["python", "-m", "app"]
   arguments: []
   inputs:
