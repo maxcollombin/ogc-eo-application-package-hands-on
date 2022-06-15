@@ -65,7 +65,7 @@ jobs:
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
       - name: build & push norm_diff image
         run: |
-          IMAGE_ID=docker.pkg.github.com/terradue//ogc-eo-application-package-hands-on/norm_diff
+          IMAGE_ID=docker.pkg.github.com/terradue/ogc-eo-application-package-hands-on/norm_diff
           docker build water-bodies/command-line-tools/norm_diff --file water-bodies/command-line-tools/norm_diff/Dockerfile --tag norm_diff
           docker tag norm_diff $IMAGE_ID:${{needs.version.outputs.app-version}}
           docker push $IMAGE_ID:${{needs.version.outputs.app-version}}
