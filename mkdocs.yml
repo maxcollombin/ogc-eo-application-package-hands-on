@@ -1,0 +1,26 @@
+site_name: 'OGC TC123 - Geospatial Cloud Native Process'
+theme:
+    name: 'material'
+    logo: imgs/TERRADUE_Icon_3.png
+    favicon: img/TERRADUE_Icon_3.png
+    palette:
+       primary: white
+       accent: teal
+nav:
+    - Welcome: index.md
+    
+    
+plugins:
+  - search
+  
+markdown_extensions:
+    - codehilite:
+        linenums: true
+        guess_lang: false
+    - footnotes
+    - toc:
+        permalink: true
+    - pymdownx.details
+    - admonition
+    - pymdownx.tabbed
+    - pymdownx.superfences   

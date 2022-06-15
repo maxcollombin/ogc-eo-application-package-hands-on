@@ -13,8 +13,8 @@ pip install -e.
   
 mamba create -c conda-forge -p /srv/conda/envs/env_crop  gdal click pystac 
 mamba create -c conda-forge -p /srv/conda/envs/env_norm_diff click gdal  
-mamba create -c conda-forge -p /srv/conda/envs/env_otsu gdal scikit-image click gdal 
+mamba create -c conda-forge -p /srv/conda/envs/env_otsu gdal scikit-image click 
 mamba create -c conda-forge -p /srv/conda/envs/env_stac click pystac python=3.9 pip && \
     /srv/conda/envs/env_stac/bin/pip install rio_stac
 
-mamba install -n base -c conda-forge cwltool nodejs ipyleaflet localtileserver
+mamba install -n base -c conda-forge cwltool nodejs ipyleaflet localtileserver mkdocs-material
