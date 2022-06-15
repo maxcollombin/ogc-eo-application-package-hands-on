@@ -20,4 +20,4 @@ mamba create -c conda-forge -p /srv/conda/envs/env_stac click pystac python=3.9 
     /srv/conda/envs/env_stac/bin/pip install rio_stac
 
 mamba install -n base -c conda-forge cwltool nodejs ipyleaflet localtileserver mkdocs-material && \
-   /srv/conda/bin/pip  install mkdocs-mermaid2-plugin
+  /srv/conda/envs/notebook/bin/pip install mkdocs-mermaid2-plugin
