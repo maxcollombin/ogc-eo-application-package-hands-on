@@ -17,11 +17,13 @@ RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
 
 RUN mkdir -p /srv/conda && chown -R mambauser:1000 /srv/conda/
 
+RUN mkdir -p /workspaces/vscode-binder/command-line-tools/otsu
+
+RUN chown -R 1000:1000 /workspaces/vscode-binder/command-line-tools/otsu
+
 USER mambauser
 
 RUN micromamba create -r /srv/conda -n env_otsu -c conda-forge gdal scikit-image click 
-
-RUN mkdir -p /workspaces/vscode-binder/command-line-tools/otsu
 
 ADD app.py /workspaces/vscode-binder/command-line-tools/otsu/app.py
 
