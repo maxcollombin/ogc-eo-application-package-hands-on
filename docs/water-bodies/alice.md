@@ -23,7 +23,7 @@ The environment on Binder provides:
 
 Learn about Alice's Application package on the IDE:
 
-1. Open the [Code server IDE interface](../../../vscode/?folder=/home/jovyan/water-bodies) 
+1. Open the [Code server IDE interface](../../../../vscode/?folder=/home/jovyan/water-bodies) 
 2. Go to `Terminal` to open a new terminal
 3. Run the water bodies detection Application Package typing 
 
@@ -56,7 +56,7 @@ Once the workflow execution is completed, there's a folder with the results gene
 
 The JSON file `out.json` contains the listing of the results included in that folder.
 
-The results can be visualized with the `visualization.ipynb` notebook on [JupyterLab](../../../lab) by running all cells. This notebook uses pystac to access the geotiffs produced, ipyleaflet to plot the tiles served by a local tile server running on the Binder environment.
+The results can be visualized with the `visualization.ipynb` notebook on [JupyterLab](../../../../lab) by running all cells. This notebook uses pystac to access the geotiffs produced, ipyleaflet to plot the tiles served by a local tile server running on the Binder environment.
 
 Technically, the notebook parses the results produced looking for the STAC Catalog file `catalog.json` and add the STAC items' `data` asset on the map.
 
