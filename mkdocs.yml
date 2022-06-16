@@ -8,7 +8,10 @@ theme:
        accent: teal
 nav:
     - EO Application Packages - hands-on: index.md
-    - Water bodies detection: water-bodies.md
+    - Water bodies detection: 
+      - water-bodies/alice.md
+      - water-bodies/bob.md
+      - water-bodies/eric.md
     
     
 plugins:
