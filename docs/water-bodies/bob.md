@@ -21,3 +21,5 @@ cwltool --no-container <app-water-bodies-m.n.x.cwl#water_bodies params.yml
 ```
 
 Where `m.n.x` is the version of the Application Package
+
+**Note** The scripted exection can also be done on a kubernetes cluster using the `calrissian` CWL runner. 
