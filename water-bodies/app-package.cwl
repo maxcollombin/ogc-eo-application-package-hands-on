@@ -3,7 +3,7 @@ cwlVersion: v1.0
 
 $namespaces:
   s: https://schema.org/
-s:softwareVersion: 1.1.1
+s:softwareVersion: 1.1.2
 schemas:
 - http://schema.org/version/9.0/schemaorg-current-http.rdf
 
@@ -155,6 +155,9 @@ $graph:
         PATH: /srv/conda/envs/env_crop/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/water-bodies/command-line-tools/crop
         PROJ_LIB: /srv/conda/envs/env_crop/share/proj/
+    ResourceRequirement:
+      coresMax: 2
+      ramMax: 2028
 
   hints:
     DockerRequirement:
@@ -195,6 +198,9 @@ $graph:
         PATH: /srv/conda/envs/env_norm_diff/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/norm_diff:/home/jovyan/water-bodies/command-line-tools/norm_diff
         PROJ_LIB: /srv/conda/envs/env_norm_diff/share/proj/
+    ResourceRequirement:
+      coresMax: 2
+      ramMax: 2028
 
   hints:
     DockerRequirement:
@@ -223,7 +229,10 @@ $graph:
         PATH: /srv/conda/envs/env_otsu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/water-bodies/command-line-tools/otsu
         PROJ_LIB: /srv/conda/envs/env_otsu/share/proj/
-  
+    ResourceRequirement:
+      coresMax: 2
+      ramMax: 2028
+
   hints:
     DockerRequirement:
       dockerPull: otsu
@@ -251,6 +260,9 @@ $graph:
         PATH: /srv/conda/envs/env_stac/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
         PYTHONPATH: /workspaces/vscode-binder/command-line-tools/stac:/home/jovyan/water-bodies/command-line-tools/stac
         PROJ_LIB: /srv/conda/envs/env_stac/lib/python3.9/site-packages/rasterio/proj_data
+    ResourceRequirement:
+      coresMax: 2
+      ramMax: 2028
 
   hints:
     DockerRequirement:
