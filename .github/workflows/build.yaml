@@ -119,7 +119,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yq -i eval '(.$graph[] | select (.id == "crop") ).hints.DockerRequirement.dockerPull = "ghcr.io/terradue/ogc-eo-application-package-hands-on/crop:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
-      - run: yq -i eval '(.$graph[] | select (.id == "norm_diff") ).hints.DockerRequirement.dockerPull = "ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_fiff:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
+      - run: yq -i eval '(.$graph[] | select (.id == "norm_diff") ).hints.DockerRequirement.dockerPull = "ghcr.io/terradue/ogc-eo-application-package-hands-on/norm_diff:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
       - run: yq -i eval '(.$graph[] | select (.id == "otsu") ).hints.DockerRequirement.dockerPull = "ghcr.io/terradue/ogc-eo-application-package-hands-on/otsu:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl 
       - run: yq -i eval '(.$graph[] | select (.id == "stac") ).hints.DockerRequirement.dockerPull = "ghcr.io/terradue/ogc-eo-application-package-hands-on/stac:${{needs.version.outputs.app-version}}"' water-bodies/app-package.cwl    
       - run: mkdir downloads
