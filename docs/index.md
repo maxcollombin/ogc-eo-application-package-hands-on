@@ -11,7 +11,7 @@ An Application Package is a text document that describes the input and output in
 
 The Application Package guarantees the automation, scalability, reusability, portability of the Application while also being workflow-engine and vendor neutral.
 
-### Bring your own algorithm
+### The Process
 
 The application (e.g. Python, shell script, C++) is containerized and registered in Container Registry 
 
@@ -20,4 +20,14 @@ The input and output interface of the application and the orchestration of its c
 The Platform converts the OGC API Processes in a CWL execution request in the computing resources of the selected provider
 
 The Application can be deployed in multiple Clouds without lock-in 
+
+### Execution Scenarios
+
+The  application package used for application testing, validation and deployment & execution in production 
+
+### Personas
+
+* ***Alice** to package an application 
+* **Bob** to script the execution of application
+* **Eric** to deploy an application on Platform
 
