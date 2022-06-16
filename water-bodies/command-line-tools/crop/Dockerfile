@@ -21,8 +21,8 @@ USER mambauser
 
 RUN micromamba create -r /srv/conda -n env_crop -c conda-forge gdal click pystac  
 
-RUN mkdir -p /home/jovyan/command-line-tools/crop
+RUN mkdir -p /workspaces/vscode-binder/command-line-tools/crop
 
-ADD app.py /home/jovyan/command-line-tools/crop/app.py
+ADD app.py /workspaces/vscode-binder/command-line-tools/crop/app.py
 
 WORKDIR /home/mambauser

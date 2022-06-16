@@ -22,8 +22,8 @@ USER mambauser
 RUN micromamba create -r /srv/conda -n env_stac -c conda-forge pystac python=3.9 pip && \
     /srv/conda/envs/env_stac/bin/pip install rio_stac
 
-RUN mkdir -p /home/jovyan/command-line-tools/stac
+RUN mkdir -p /workspaces/vscode-binder/command-line-tools/stac
 
-ADD app.py /home/jovyan/command-line-tools/stac/app.py
+ADD app.py /workspaces/vscode-binder/command-line-tools/stac/app.py
 
 WORKDIR /home/mambauser

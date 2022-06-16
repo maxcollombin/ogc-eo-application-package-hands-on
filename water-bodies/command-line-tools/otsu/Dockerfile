@@ -21,8 +21,8 @@ USER mambauser
 
 RUN micromamba create -r /srv/conda -n env_otsu -c conda-forge gdal scikit-image click 
 
-RUN mkdir -p /home/jovyan/command-line-tools/otsu
+RUN mkdir -p /workspaces/vscode-binder/command-line-tools/otsu
 
-ADD app.py /home/jovyan/command-line-tools/otsu/app.py
+ADD app.py /workspaces/vscode-binder/command-line-tools/otsu/app.py
 
 WORKDIR /home/mambauser

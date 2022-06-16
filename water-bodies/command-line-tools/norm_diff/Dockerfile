@@ -21,8 +21,8 @@ USER mambauser
 
 RUN micromamba create -r /srv/conda -n env_norm_diff -c conda-forge gdal click   
 
-RUN mkdir -p /home/jovyan/command-line-tools/norm_diff
+RUN mkdir -p /workspaces/vscode-binder/command-line-tools/norm_diff
 
-ADD app.py /home/jovyan/command-line-tools/norm_diff/app.py
+ADD app.py /workspaces/vscode-binder/command-line-tools/norm_diff/app.py
 
 WORKDIR /home/mambauser
