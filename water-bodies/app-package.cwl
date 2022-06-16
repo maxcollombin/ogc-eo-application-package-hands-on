@@ -3,7 +3,7 @@ cwlVersion: v1.0
 
 $namespaces:
   s: https://schema.org/
-s:softwareVersion: 1.1.5
+s:softwareVersion: 1.1.6
 schemas:
 - http://schema.org/version/9.0/schemaorg-current-http.rdf
 
@@ -227,7 +227,7 @@ $graph:
     EnvVarRequirement:
       envDef: 
         PATH: /srv/conda/envs/env_otsu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/crop:/home/jovyan/water-bodies/command-line-tools/otsu
+        PYTHONPATH: /workspaces/vscode-binder/command-line-tools/otsu:/home/jovyan/water-bodies/command-line-tools/otsu
         PROJ_LIB: /srv/conda/envs/env_otsu/share/proj/
     ResourceRequirement:
       coresMax: 2
